@@ -1,0 +1,54 @@
+<div class="row valign-wrapper">
+  <div class="col m3 offset-m3 s6 center-align">
+    <h5>Department #{{department.id}}</h5>
+  </div>
+  <div class="col m3 s6 center-align">
+    <a class="btn-floating waves-effect waves-light green"
+       (click)="showInfo = !showInfo">
+      <i *ngIf="showInfo" class="material-icons">
+        keyboard_arrow_up
+      </i>
+      <i *ngIf="!showInfo" class="material-icons">
+        keyboard_arrow_down
+      </i>
+    </a>
+    <a [routerLink]="'/workers/' + department.id"
+       class="btn-floating waves-effect waves-light blue-grey">
+      <i class="material-icons">
+        view_headline
+      </i>
+    </a>
+  </div>
+</div>
+<div class="info" *ngIf="showInfo">
+<!--  <div class="input-field">-->
+<!--    <input type="number"-->
+<!--           id="id" [(ngModel)]="department.id"-->
+<!--           class="validate">-->
+<!--    <label for="id" class="active">Group number</label>-->
+<!--  </div>-->
+  <div class="input-field">
+    <input type="text"
+           id="name" [(ngModel)]="department.name"
+           class="validate">
+    <label for="name" class="active">Department</label>
+  </div>
+<!--  <div class="input-field">-->
+<!--    <input type="text"-->
+<!--           id="specialty" [(ngModel)]="department.specialty"-->
+<!--           class="validate">-->
+<!--    <label for="specialty" class="active">Specialty</label>-->
+<!--  </div>-->
+  <div class="input-field">
+    <input type="number"
+           id="vacancyNumber" [(ngModel)]="department.vacancyNumber"
+           class="validate">
+    <label for="vacancyNumber" class="active">Vacancy Number</label>
+  </div>
+  <a class="rem-row btn-floating waves-effect waves-light red"
+     (click)="deleteDepartment()">
+    <i class="material-icons">
+      delete
+    </i>
+  </a>
+</div>
