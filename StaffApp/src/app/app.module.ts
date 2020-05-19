@@ -8,6 +8,8 @@ import { DepartmentListComponent } from './department-list/department-list.compo
 import { DepartmentItemComponent } from './department-item/department-item.component';
 import { WorkerListComponent } from './worker-list/worker-list.component';
 import { DepartmentAddComponent } from './department-add/department-add.component';
+import { WorkerItemComponent } from './worker-item/worker-item.component';
+import { WorkerAddComponent } from './worker-add/worker-add.component';
 
 const routes: Routes = [
   {path: 'departments', component: DepartmentListComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
     DepartmentItemComponent,
     WorkerListComponent,
     DepartmentAddComponent,
+    WorkerItemComponent,
+    WorkerAddComponent,
   ],
   imports: [
     BrowserModule,

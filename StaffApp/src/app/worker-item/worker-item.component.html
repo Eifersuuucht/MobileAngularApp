@@ -1,6 +1,6 @@
 <div class="row valign-wrapper">
   <div class="col m3 offset-m3 s6 center-align">
-    <h5>Department #{{department.id}}</h5>
+    <h5>{{worker.lastName}}</h5>
   </div>
   <div class="col m3 s6 center-align">
     <a class="btn-floating waves-effect waves-light green"
@@ -12,29 +12,29 @@
         keyboard_arrow_down
       </i>
     </a>
-    <a [routerLink]="'/workers/' + department.id"
-       class="btn-floating waves-effect waves-light blue-grey">
-      <i class="material-icons">
-        view_headline
-      </i>
-    </a>
   </div>
 </div>
 <div class="info" *ngIf="showInfo">
   <div class="input-field">
     <input type="text"
-           id="name" [(ngModel)]="department.name"
+           id="lastName" [(ngModel)]="worker.lastName"
            class="validate">
-    <label for="name" class="active">Department</label>
+    <label for="lastName" class="active">Worker Last Name</label>
   </div>
   <div class="input-field">
     <input type="number"
-           id="vacancyNumber" [(ngModel)]="department.vacancyNumber"
+           id="experienceInMonth" [(ngModel)]="worker.experienceInMonth"
            class="validate">
-    <label for="vacancyNumber" class="active">Vacancy Number</label>
+    <label for="experienceInMonth" class="active">Total experience (in month)</label>
+  </div>
+  <div class="input-field">
+    <input type="text"
+           id="position" [(ngModel)]="worker.position"
+           class="validate">
+    <label for="position" class="active">Position</label>
   </div>
   <a class="rem-row btn-floating waves-effect waves-light red"
-     (click)="deleteDepartment()">
+     (click)="deleteWorker()">
     <i class="material-icons">
       delete
     </i>

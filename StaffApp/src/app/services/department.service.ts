@@ -19,48 +19,8 @@ export class DepartmentService {
       vacancyNumber: 3
     }
   ];
-  private workers: Worker[] = [
-    {
-      id: 1,
-      lastName: 'Nitro',
-      experienceInMonth: 15,
-      position: 'Director',
-      departmentId: 2
-    },
-    {
-      id: 2,
-      lastName: 'Laus',
-      experienceInMonth: 2,
-      position: 'Director',
-      departmentId: 1
-    },
-    {
-      id: 3,
-      lastName: 'Skolnik',
-      experienceInMonth: 33,
-      position: 'Software Engineer',
-      departmentId: 1
-    },
-    {
-      id: 4,
-      lastName: 'Nash',
-      experienceInMonth: 11,
-      position: 'HR Manager',
-      departmentId: 2
-    }
-  ];
 
   constructor() {
-  }
-
-  getWorkers(departmentId: number): Observable<Worker[]>{
-    console.log(this.workers.filter(elem => {
-      return elem.departmentId === departmentId;
-    }));
-    console.log(departmentId);
-    return of(this.workers.filter(elem => {
-      return elem.departmentId === departmentId;
-    }));
   }
 
   getDepartments(): Observable<Department[]> {
@@ -77,7 +37,9 @@ export class DepartmentService {
     this.departments.push(department);
   }
 
-  deleteDepartment(index){
-    this.departments.splice(index, 1);
+  deleteDepartment(id: number){
+    const departmentToDelete = this.departments.find(department => department.id === id);
+    const indexToDelete = this.departments.indexOf(departmentToDelete);
+    this.departments.splice(indexToDelete, 1);
   }
 }

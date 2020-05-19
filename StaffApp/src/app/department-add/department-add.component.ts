@@ -25,5 +25,4 @@ export class DepartmentAddComponent implements OnInit {
     this.showForm = false;
     this.departmentService.addDepartment(department);
   }
-
 }

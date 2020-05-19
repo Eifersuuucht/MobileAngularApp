@@ -11,12 +11,15 @@ export class DepartmentListComponent implements OnInit {
   departments: Department[];
 
   constructor(private departmentService: DepartmentService) {
-    departmentService.getDepartments().subscribe(
-      (departments) => this.departments = departments
-    );
   }
 
   ngOnInit(): void {
+    this.departmentService.getDepartments().subscribe(
+      (departments) => {
+        this.departments = departments;
+
+      }
+    );
   }
 
 }

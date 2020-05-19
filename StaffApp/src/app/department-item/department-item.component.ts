@@ -9,7 +9,6 @@ import {Department} from '../models/department.model';
 })
 export class DepartmentItemComponent implements OnInit {
   @Input() department: Department;
-  @Input() departmentIndex: number;
   showInfo = false;
 
   constructor(private departmentService: DepartmentService) { }
@@ -18,7 +17,7 @@ export class DepartmentItemComponent implements OnInit {
   }
 
   deleteDepartment() {
-    this.departmentService.deleteDepartment(this.departmentIndex);
+    this.departmentService.deleteDepartment(this.department.id);
   }
 
 }

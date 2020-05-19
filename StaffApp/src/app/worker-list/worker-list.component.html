@@ -13,8 +13,8 @@
     <h5 class="center-align">Worker List</h5>
   </div>
 </div>
-<div *ngFor="let worker of workers" class="row valign-wrapper">
-  <div class="col m6 offset-m3 s12">
-    <h6>{{worker.lastName}}</h6>
-  </div>
-</div>
+<app-worker-add [departmentId]="departmentId"></app-worker-add>
+<app-worker-item
+  *ngFor="let worker of workers"
+  [worker]="worker">
+</app-worker-item>
